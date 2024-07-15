@@ -1,0 +1,98 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.5.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:1dcaf1be-f1c9-417b-8a88-ffd8e39b146b",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2024-07-15T17:31:55+00:00",
+    "tools": {
+      "components": [
+        {
+          "type": "application",
+          "group": "aquasecurity",
+          "name": "trivy",
+          "version": "0.52.2"
+        }
+      ]
+    },
+    "component": {
+      "bom-ref": "add62e73-5e9e-409f-9e1c-bea491bbc592",
+      "type": "application",
+      "name": "demoGo",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:SchemaVersion",
+          "value": "2"
+        }
+      ]
+    }
+  },
+  "components": [
+    {
+      "bom-ref": "392cc4a1-3c93-440f-a254-54b2f9ef8a40",
+      "type": "application",
+      "name": "demoGo",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:Class",
+          "value": "lang-pkgs"
+        },
+        {
+          "name": "aquasecurity:trivy:Type",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:golang/demogo",
+      "type": "library",
+      "name": "demoGo",
+      "purl": "pkg:golang/demogo",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:golang/stdlib@1.22.4",
+      "type": "library",
+      "name": "stdlib",
+      "version": "1.22.4",
+      "purl": "pkg:golang/stdlib@1.22.4",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gobinary"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "392cc4a1-3c93-440f-a254-54b2f9ef8a40",
+      "dependsOn": [
+        "pkg:golang/demogo"
+      ]
+    },
+    {
+      "ref": "add62e73-5e9e-409f-9e1c-bea491bbc592",
+      "dependsOn": [
+        "392cc4a1-3c93-440f-a254-54b2f9ef8a40"
+      ]
+    },
+    {
+      "ref": "pkg:golang/demogo",
+      "dependsOn": [
+        "pkg:golang/stdlib@1.22.4"
+      ]
+    },
+    {
+      "ref": "pkg:golang/stdlib@1.22.4",
+      "dependsOn": []
+    }
+  ],
+  "vulnerabilities": []
+}
